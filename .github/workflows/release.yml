@@ -31,6 +31,6 @@ jobs:
           name: ${{ github.ref_name }}
           generate_release_notes: true
           files: |
-            dist/BerryerSetup-mac-apple.command
-            dist/BerryerSetup-mac-intel.command
+            dist/BerryerSetup-mac-apple.zip
+            dist/BerryerSetup-mac-intel.zip
             dist/BerryerSetup.exe

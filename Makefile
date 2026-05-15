@@ -20,12 +20,15 @@ mac-apple:
 windows:
 	GOOS=windows GOARCH=amd64 go build -ldflags "$(LDFLAGS)" -o $(DIST)/$(BINARY).exe .
 
-# Renomme le binaire Mac en .command pour qu'un double-clic dans le Finder
-# l'ouvre automatiquement dans Terminal.
+# Renomme le binaire Mac en .command (Finder l'ouvre dans Terminal au
+# double-clic), puis l'emballe dans un .zip pour préserver le bit
+# exécutable au téléchargement (le navigateur le strippe sinon).
 package-mac: mac-apple mac-intel
 	cp $(DIST)/$(BINARY)-mac-apple $(DIST)/BerryerSetup-mac-apple.command
 	cp $(DIST)/$(BINARY)-mac-intel $(DIST)/BerryerSetup-mac-intel.command
 	chmod +x $(DIST)/BerryerSetup-mac-apple.command $(DIST)/BerryerSetup-mac-intel.command
+	cd $(DIST) && zip -j -X BerryerSetup-mac-apple.zip BerryerSetup-mac-apple.command
+	cd $(DIST) && zip -j -X BerryerSetup-mac-intel.zip BerryerSetup-mac-intel.command
 
 package-windows: windows
 	cp $(DIST)/$(BINARY).exe $(DIST)/BerryerSetup.exe

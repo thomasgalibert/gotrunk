@@ -51,10 +51,13 @@ make run                     # menu de profils (un seul = lancement direct)
 
 ### macOS
 
-1. Télécharger `BerryerSetup-mac-apple.command` (Mac M1/M2/M3) ou `BerryerSetup-mac-intel.command` (Mac plus ancien).
-2. Double-cliquer sur le fichier dans le Finder.
-3. **Si macOS affiche un avertissement de sécurité** : faire **clic droit** sur le fichier → **Ouvrir** → confirmer **Ouvrir** dans la boîte de dialogue. C'est nécessaire une seule fois.
-4. Suivre les instructions à l'écran.
+1. Télécharger `BerryerSetup-mac-apple.zip` (Mac M1/M2/M3) ou `BerryerSetup-mac-intel.zip` (Mac plus ancien).
+2. Double-cliquer sur le `.zip` dans le Finder — un fichier `.command` est extrait à côté.
+3. Double-cliquer sur le `.command` extrait.
+4. **Si macOS affiche un avertissement de sécurité** ("application non identifiée") : faire **clic droit** sur le `.command` → **Ouvrir** → confirmer **Ouvrir** dans la boîte de dialogue. C'est nécessaire une seule fois.
+5. Suivre les instructions à l'écran.
+
+> Le `.zip` est nécessaire pour préserver les permissions d'exécution : un téléchargement direct d'un binaire macOS via le navigateur supprime le bit `+x`, ce qui force l'utilisateur à passer par le Terminal pour le réactiver.
 
 ### Windows
 
